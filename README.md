@@ -10,12 +10,13 @@ server: Tomcat 9.0.
 Scrum
 github
 
-
+Production version:
+user=danijela
+password=erik
 
 
 derby databasen: 
 NetworkServerControl -p 50000 start
 
 connect 'jdbc:derby://localhost:50000/webbutik2;create=true';
-
 connect 'jdbc:derby://localhost:50000/webbutik2';
