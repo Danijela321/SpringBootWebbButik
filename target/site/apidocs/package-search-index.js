@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.webbutik.exception"},{"l":"com.webbutik.SpringBootWebbButik"},{"l":"com.webbutik.SpringBootWebbButik.config"},{"l":"com.webbutik.SpringBootWebbButik.domain"},{"l":"com.webbutik.SpringBootWebbButik.repository"},{"l":"com.webbutik.SpringBootWebbButik.services"}]

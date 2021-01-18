@@ -38,20 +38,18 @@
 			<artifactId>thymeleaf-extras-springsecurity5</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<!-- <dependency> <groupId>org.apache.derby</groupId> <artifactId>derby</artifactId> 
+		<!-- <dependency> <groupId>com.h2database</groupId> <artifactId>h2</artifactId> 
 			<scope>runtime</scope> </dependency> -->
-		<!-- https://mvnrepository.com/artifact/org.apache.derby/derby -->
 
 
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
 
-		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-tomcat</artifactId> 
-			<scope>provided</scope> </dependency> https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-catalina -->
+		<!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-catalina -->
 		<dependency>
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-catalina</artifactId>
@@ -94,19 +92,30 @@
 			<version>10.12.1.1</version>
 			<scope>runtime</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>org.apache.derby</groupId>
 			<artifactId>derbyclient</artifactId>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.apache.derby/derbynet -->
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derbynet</artifactId>
+			<version>10.12.1.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.derby/derbytools -->
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derbytools</artifactId>
+			<version>10.12.1.1</version>
+		</dependency>
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
-		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-devtools</artifactId> 
-			<optional>true</optional> </dependency> -->
-
 
 		<!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
 		<dependency>
@@ -115,6 +124,22 @@
 			<version>1</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<!-- Utils -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
 
 	</dependencies>
 
@@ -140,22 +165,41 @@
 			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-javadoc-plugin 
 				<dependency> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-javadoc-plugin</artifactId> 
 				<version>3.2.0</version> </dependency> -->
+	
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>3.2.0</version> 
-			<!-- for att ha javadoc som jar
-				<executions>
-					<execution>
-						<id>attach-javadocs</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-				-->
+				<version>3.2.0</version>
+				<!--  for att ha javadoc som jar -->
+				 <executions>
+				 <execution> <id>attach-javadocs</id> 
+					<goals> <goal>jar</goal> 
+			<!--  	<goal>test-jar</goal> -->
+					</goals> 
+					
+					</execution> </executions>  
 			</plugin>
-
+		
+				<!-- 
+				<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-javadoc-plugin</artifactId>
+			    <version>3.1.1</version>
+			    <configuration>
+			                    <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
+			                </configuration>
+			    <executions>
+			        <execution>
+			            <id>javadoc</id>
+			            <phase>package</phase>
+			            <goals>
+			                <goal>jar</goal>
+			         
+			            </goals>
+			        </execution>
+			    </executions>
+			</plugin>
+	-->
 		</plugins>
 
 		<resources>
@@ -167,7 +211,13 @@
 				</includes>
 			</resource>
 		</resources>
-
-	</build>
+			<testResources>
+			<testResource>
+				<filtering>true</filtering>
+				<directory>src/test/resources</directory>			
+			</testResource>
+		</testResources>
+		
+		</build>
 
 </project>

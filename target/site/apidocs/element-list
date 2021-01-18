@@ -1,0 +1,6 @@
+com.webbutik.exception
+com.webbutik.SpringBootWebbButik
+com.webbutik.SpringBootWebbButik.config
+com.webbutik.SpringBootWebbButik.domain
+com.webbutik.SpringBootWebbButik.repository
+com.webbutik.SpringBootWebbButik.services
